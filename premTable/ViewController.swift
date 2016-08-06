@@ -11,15 +11,16 @@ import Alamofire
 import SwiftyJSON
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
+    @IBOutlet var premTable: UITableView!
      var standings = [team]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTable()
         // Do any additional setup after loading the view, typically from a nib.
-    }
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -34,7 +35,6 @@ class ViewController: UIViewController {
         Alamofire.request(.GET, "https://api.football-data.org/v1/soccerseasons/426/leagueTable", parameters: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
             .responseJSON{ response in
                 let json = JSON(response.result.value!)
-                //print(json["standing"])
                 self.createStandings(json)
                 
         }
@@ -45,11 +45,26 @@ class ViewController: UIViewController {
         for i in 0...json["standing"].count-1{
             let currentTeam : team = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]))
             standings.append(currentTeam)
-            print(standings[i].name)
+            //print(standings[i].name)
         }
-        
-        
-    
+        reloadTable()
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return standings.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        cell.textLabel?.text = standings[indexPath.row].name
+        return cell
+    }
+    
+    func reloadTable() {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.premTable.reloadData()
+        })
+    }
+    
 }
 
