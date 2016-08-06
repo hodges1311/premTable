@@ -9,6 +9,8 @@
 import UIKit
 
 class TeamTableViewCell: UITableViewCell {
+   
+    @IBOutlet weak var TeamCrest: UIImageView!
 
     @IBOutlet weak var position: UILabel!
     @IBOutlet weak var points: UILabel!

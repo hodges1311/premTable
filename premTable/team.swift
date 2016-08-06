@@ -11,14 +11,17 @@ import Alamofire
 import SwiftyJSON
 
 class team{
-    var rank : String?
-    var name : String?
-    var points : String?
+    var rank : String
+    var name : String
+    var points : String
+    var imageURL : String
     
-    init(rank : String, name : String, points : String){
+    init(rank : String, name : String, points : String, crest : String){
         self.rank = rank
         self.name = name
         self.points = points
+        self.imageURL = crest.stringByReplacingOccurrencesOfString("http://", withString: "https://", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        
     }
     
     

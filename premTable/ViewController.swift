@@ -43,7 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func createStandings(json : JSON){
         
         for i in 0...json["standing"].count-1{
-            let currentTeam : team = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]))
+            let currentTeam : team = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), crest : String(json["standing"][i]["crestURI"]))
             standings.append(currentTeam)
             //print(standings[i].name)
         }
@@ -59,7 +59,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.teamName?.text = standings[indexPath.row].name
         cell.position.text = standings[indexPath.row].rank
         cell.points.text = standings[indexPath.row].points
-        
+        cell.TeamCrest.image = UIImage(named: standings[indexPath.row].name + ".png")
         return cell
     }
     
@@ -69,5 +69,5 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         })
     }
     
-}
+    }
 
