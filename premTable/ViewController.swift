@@ -55,8 +55,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        cell.textLabel?.text = standings[indexPath.row].name
+        let cell = tableView.dequeueReusableCellWithIdentifier("TeamTableViewCell", forIndexPath: indexPath) as! TeamTableViewCell
+        cell.teamName?.text = standings[indexPath.row].name
+        cell.position.text = standings[indexPath.row].rank
+        cell.points.text = standings[indexPath.row].points
+        
         return cell
     }
     

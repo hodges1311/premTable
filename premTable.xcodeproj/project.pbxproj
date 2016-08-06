@@ -16,6 +16,7 @@
 		334D63161D5572C2004F511F /* premTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334D63151D5572C2004F511F /* premTableTests.swift */; };
 		334D63211D5572C2004F511F /* premTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334D63201D5572C2004F511F /* premTableUITests.swift */; };
 		33DD58131D564FF0007B072D /* team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD58121D564FF0007B072D /* team.swift */; };
+		33DD58151D5665A3007B072D /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DD58141D5665A3007B072D /* TeamTableViewCell.swift */; };
 		4708C883F073AEDE41A28343 /* Pods_premTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4607D8FCBDE868A78CC643D7 /* Pods_premTable.framework */; };
 		9E060F263760ABD561E8733F /* libPods-premTableUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B8B24A5A249E290D34A1E8 /* libPods-premTableUITests.a */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		334D63201D5572C2004F511F /* premTableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = premTableUITests.swift; sourceTree = "<group>"; };
 		334D63221D5572C2004F511F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DD58121D564FF0007B072D /* team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = team.swift; sourceTree = "<group>"; };
+		33DD58141D5665A3007B072D /* TeamTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		4607D8FCBDE868A78CC643D7 /* Pods_premTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_premTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61B8B24A5A249E290D34A1E8 /* libPods-premTableUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-premTableUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89B609327D0FF8D20122DEE2 /* Pods-premTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-premTable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-premTable/Pods-premTable.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				334D63001D5572C2004F511F /* AppDelegate.swift */,
 				334D63021D5572C2004F511F /* ViewController.swift */,
 				334D63041D5572C2004F511F /* Main.storyboard */,
+				33DD58141D5665A3007B072D /* TeamTableViewCell.swift */,
 				334D63071D5572C2004F511F /* Assets.xcassets */,
 				334D63091D5572C2004F511F /* LaunchScreen.storyboard */,
 				334D630C1D5572C2004F511F /* Info.plist */,
@@ -430,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33DD58151D5665A3007B072D /* TeamTableViewCell.swift in Sources */,
 				334D63031D5572C2004F511F /* ViewController.swift in Sources */,
 				334D63011D5572C2004F511F /* AppDelegate.swift in Sources */,
 				33DD58131D564FF0007B072D /* team.swift in Sources */,
