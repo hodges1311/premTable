@@ -15,6 +15,8 @@
 		334D630B1D5572C2004F511F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 334D63091D5572C2004F511F /* LaunchScreen.storyboard */; };
 		334D63161D5572C2004F511F /* premTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334D63151D5572C2004F511F /* premTableTests.swift */; };
 		334D63211D5572C2004F511F /* premTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334D63201D5572C2004F511F /* premTableUITests.swift */; };
+		3354359C1D57E26F0067F435 /* Simulator Screen Shot Aug 7, 2016, 5.40.14 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 3354359A1D57E26F0067F435 /* Simulator Screen Shot Aug 7, 2016, 5.40.14 PM.png */; };
+		3354359D1D57E26F0067F435 /* Simulator Screen Shot Aug 7, 2016, 5.40.22 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 3354359B1D57E26F0067F435 /* Simulator Screen Shot Aug 7, 2016, 5.40.22 PM.png */; };
 		33B1E0A61D57CCCE00005A24 /* AFC Bournemouth.png in Resources */ = {isa = PBXBuildFile; fileRef = 33B1E0921D57CCCE00005A24 /* AFC Bournemouth.png */; };
 		33B1E0A71D57CCCE00005A24 /* Arsenal FC.png in Resources */ = {isa = PBXBuildFile; fileRef = 33B1E0931D57CCCE00005A24 /* Arsenal FC.png */; };
 		33B1E0A81D57CCCE00005A24 /* Burnley FC.png in Resources */ = {isa = PBXBuildFile; fileRef = 33B1E0941D57CCCE00005A24 /* Burnley FC.png */; };
@@ -79,6 +81,8 @@
 		334D631C1D5572C2004F511F /* premTableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = premTableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		334D63201D5572C2004F511F /* premTableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = premTableUITests.swift; sourceTree = "<group>"; };
 		334D63221D5572C2004F511F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3354359A1D57E26F0067F435 /* Simulator Screen Shot Aug 7, 2016, 5.40.14 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot Aug 7, 2016, 5.40.14 PM.png"; sourceTree = "<group>"; };
+		3354359B1D57E26F0067F435 /* Simulator Screen Shot Aug 7, 2016, 5.40.22 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot Aug 7, 2016, 5.40.22 PM.png"; sourceTree = "<group>"; };
 		33B1E0921D57CCCE00005A24 /* AFC Bournemouth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AFC Bournemouth.png"; path = "Team Logos/AFC Bournemouth.png"; sourceTree = "<group>"; };
 		33B1E0931D57CCCE00005A24 /* Arsenal FC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Arsenal FC.png"; path = "Team Logos/Arsenal FC.png"; sourceTree = "<group>"; };
 		33B1E0941D57CCCE00005A24 /* Burnley FC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Burnley FC.png"; path = "Team Logos/Burnley FC.png"; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 		33B1E0BA1D57CCDB00005A24 /* logos */ = {
 			isa = PBXGroup;
 			children = (
+				3354359A1D57E26F0067F435 /* Simulator Screen Shot Aug 7, 2016, 5.40.14 PM.png */,
+				3354359B1D57E26F0067F435 /* Simulator Screen Shot Aug 7, 2016, 5.40.22 PM.png */,
 				33B1E0BB1D57D36000005A24 /* premTableLaunch.png */,
 				33B1E0921D57CCCE00005A24 /* AFC Bournemouth.png */,
 				33B1E0931D57CCCE00005A24 /* Arsenal FC.png */,
@@ -395,11 +401,13 @@
 				33B1E0AD1D57CCCE00005A24 /* Leicester City FC.png in Resources */,
 				33B1E0BC1D57D36000005A24 /* premTableLaunch.png in Resources */,
 				33B1E0B11D57CCCE00005A24 /* Middlesbrough FC.png in Resources */,
+				3354359D1D57E26F0067F435 /* Simulator Screen Shot Aug 7, 2016, 5.40.22 PM.png in Resources */,
 				334D63081D5572C2004F511F /* Assets.xcassets in Resources */,
 				33B1E0A81D57CCCE00005A24 /* Burnley FC.png in Resources */,
 				33B1E0B51D57CCCE00005A24 /* Swansea City FC.png in Resources */,
 				33B1E0AE1D57CCCE00005A24 /* Liverpool FC.png in Resources */,
 				33B1E0B41D57CCCE00005A24 /* Sunderland AFC.png in Resources */,
+				3354359C1D57E26F0067F435 /* Simulator Screen Shot Aug 7, 2016, 5.40.14 PM.png in Resources */,
 				33B1E0B91D57CCCE00005A24 /* West Ham United FC.png in Resources */,
 				33B1E0AC1D57CCCE00005A24 /* Hull City FC.png in Resources */,
 				334D63061D5572C2004F511F /* Main.storyboard in Resources */,
