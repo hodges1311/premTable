@@ -13,6 +13,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
+    @IBOutlet var stack: UIStackView!
     @IBOutlet var premTable: UITableView!
      var standings = [team]()
 

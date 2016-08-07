@@ -13,7 +13,7 @@
 		331118EF1D56886700D87338 /* Chelsea FC.png in Resources */ = {isa = PBXBuildFile; fileRef = 331118DB1D56886700D87338 /* Chelsea FC.png */; };
 		331118F01D56886700D87338 /* Crystal Palace FC.png in Resources */ = {isa = PBXBuildFile; fileRef = 331118DC1D56886700D87338 /* Crystal Palace FC.png */; };
 		331118F11D56886700D87338 /* Everton FC.png in Resources */ = {isa = PBXBuildFile; fileRef = 331118DD1D56886700D87338 /* Everton FC.png */; };
-		331118F21D56886700D87338 /* Hull CIty FC.png in Resources */ = {isa = PBXBuildFile; fileRef = 331118DE1D56886700D87338 /* Hull CIty FC.png */; };
+		331118F21D56886700D87338 /* Hull City FC.png in Resources */ = {isa = PBXBuildFile; fileRef = 331118DE1D56886700D87338 /* Hull City FC.png */; };
 		331118F31D56886700D87338 /* Leicester City FC.png in Resources */ = {isa = PBXBuildFile; fileRef = 331118DF1D56886700D87338 /* Leicester City FC.png */; };
 		331118F41D56886700D87338 /* Liverpool FC.png in Resources */ = {isa = PBXBuildFile; fileRef = 331118E01D56886700D87338 /* Liverpool FC.png */; };
 		331118F51D56886700D87338 /* Manchester City FC.png in Resources */ = {isa = PBXBuildFile; fileRef = 331118E11D56886700D87338 /* Manchester City FC.png */; };
@@ -67,7 +67,7 @@
 		331118DB1D56886700D87338 /* Chelsea FC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Chelsea FC.png"; path = "../../../Downloads/Chelsea FC.png"; sourceTree = "<group>"; };
 		331118DC1D56886700D87338 /* Crystal Palace FC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Crystal Palace FC.png"; path = "../../../Downloads/Crystal Palace FC.png"; sourceTree = "<group>"; };
 		331118DD1D56886700D87338 /* Everton FC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Everton FC.png"; path = "../../../Downloads/Everton FC.png"; sourceTree = "<group>"; };
-		331118DE1D56886700D87338 /* Hull CIty FC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Hull CIty FC.png"; path = "../../../Downloads/Hull CIty FC.png"; sourceTree = "<group>"; };
+		331118DE1D56886700D87338 /* Hull City FC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Hull City FC.png"; path = "../../../Downloads/Hull City FC.png"; sourceTree = "<group>"; };
 		331118DF1D56886700D87338 /* Leicester City FC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Leicester City FC.png"; path = "../../../Downloads/Leicester City FC.png"; sourceTree = "<group>"; };
 		331118E01D56886700D87338 /* Liverpool FC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Liverpool FC.png"; path = "../../../Downloads/Liverpool FC.png"; sourceTree = "<group>"; };
 		331118E11D56886700D87338 /* Manchester City FC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Manchester City FC.png"; path = "../../../Downloads/Manchester City FC.png"; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 			children = (
 				331118DC1D56886700D87338 /* Crystal Palace FC.png */,
 				331118DD1D56886700D87338 /* Everton FC.png */,
-				331118DE1D56886700D87338 /* Hull CIty FC.png */,
+				331118DE1D56886700D87338 /* Hull City FC.png */,
 				331118DF1D56886700D87338 /* Leicester City FC.png */,
 				331118E01D56886700D87338 /* Liverpool FC.png */,
 				331118E11D56886700D87338 /* Manchester City FC.png */,
@@ -315,6 +315,7 @@
 				TargetAttributes = {
 					334D62FC1D5572C2004F511F = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = MEVLPVN4G7;
 					};
 					334D63101D5572C2004F511F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -353,7 +354,7 @@
 			files = (
 				331118FA1D56886700D87338 /* Sunderland AFC.png in Resources */,
 				331118F91D56886700D87338 /* Stoke City FC.png in Resources */,
-				331118F21D56886700D87338 /* Hull CIty FC.png in Resources */,
+				331118F21D56886700D87338 /* Hull City FC.png in Resources */,
 				331118FE1D56886700D87338 /* AFC Bournemouth.png in Resources */,
 				334D630B1D5572C2004F511F /* LaunchScreen.storyboard in Resources */,
 				331118F11D56886700D87338 /* Everton FC.png in Resources */,
@@ -667,10 +668,13 @@
 			baseConfigurationReference = 89B609327D0FF8D20122DEE2 /* Pods-premTable.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = premTable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HodgesApps.premTable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -679,10 +683,13 @@
 			baseConfigurationReference = 07A16C64AD79B2E0658B48B7 /* Pods-premTable.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = premTable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HodgesApps.premTable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
