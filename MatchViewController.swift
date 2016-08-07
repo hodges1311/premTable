@@ -59,8 +59,32 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.away.text = matches[indexPath.row].away
         cell.homeCrest.image = UIImage(named: matches[indexPath.row].home + ".png")
         cell.awayCrest.image = UIImage(named: matches[indexPath.row].away + ".png")
-        
+        if String(matches[indexPath.row].status) == "TIMED" {
+            cell.score.text = getDayTime(getGameTime(matches[indexPath.row].time)!)
+        }
+        else {
+            cell.score.text = String(matches[indexPath.row].homeGoals) + "-" + String(matches[indexPath.row].awayGoals)
+        }
         return cell
+    }
+    
+    func getGameTime(date : String) -> NSDate?{
+        let dateString = date
+        var gameTime : NSDate?
+        var secondsFromGMT: Int { return NSTimeZone.localTimeZone().secondsFromGMT }
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        gameTime = dateFormatter.dateFromString(dateString)
+        return gameTime
+    }
+    
+    func getDayTime(iso : NSDate)->String {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.componentsInTimeZone(NSTimeZone.localTimeZone(), fromDate: iso)
+        let time = (String(components.hour) + ":" + String(components.minute)).stringByReplacingOccurrencesOfString(":0", withString: ":00")
+        return String(components.month) + "/" + String(components.day) + "\n" + time
     }
     
     func reloadTable() {
