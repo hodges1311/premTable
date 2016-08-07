@@ -13,13 +13,16 @@ import SwiftyJSON
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
-    @IBOutlet var stack: UIStackView!
+ 
+    @IBOutlet var tableStack: UIStackView!
     @IBOutlet var premTable: UITableView!
+    
      var standings = [team]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadTable()
+        loadStandings()
         // Do any additional setup after loading the view, typically from a nib.
         }
 
@@ -30,7 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     
     
-    func loadTable() {
+    func loadStandings() {
         
         
         Alamofire.request(.GET, "https://api.football-data.org/v1/soccerseasons/426/leagueTable", parameters: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
