@@ -33,7 +33,7 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func loadMatches() {
-        Alamofire.request(.GET, "https://api.football-data.org/v1/competitions/426/fixtures?matchday=1", parameters: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
+        Alamofire.request(.GET, "https://api.football-data.org/v1/competitions/426/fixtures?matchday=1", parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
             .responseJSON{ response in
                 let json = JSON(response.result.value!)
                 self.createMatches(json["fixtures"])
