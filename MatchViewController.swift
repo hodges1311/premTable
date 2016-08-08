@@ -20,12 +20,17 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     var currentMatchday = 1;
     var matches = [match]()
+    var refreshControl = UIRefreshControl()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.barTintColor = UIColor.orangeColor()
         loadMatches()
+        
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.matchTable?.addSubview(refreshControl)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -38,12 +43,19 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
         Alamofire.request(.GET, "https://api.football-data.org/v1/competitions/426/fixtures?matchday=1", parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
             .responseJSON{ response in
                 let json = JSON(response.result.value!)
+                
+                if self.refreshControl.refreshing
+                {
+                    self.refreshControl.endRefreshing()
+                }
+                
                 self.createMatches(json["fixtures"])
                 
     }
     }
     
     func createMatches(json :JSON) {
+        matches.removeAll()
         for i in 0...json.count-1{
             let currentMatch :match = match(home : String(json[i]["homeTeamName"]), away : String(json[i]["awayTeamName"]), homeGoals : String(json[i]["result"]["homeTeamGoals"]), awayGoals :  String(json[i]["result"]["awayTeamGoals"]), status : String(json[i]["status"]), time : String(json[i]["date"]))
             matches.append(currentMatch)
@@ -93,6 +105,10 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.matchTable.reloadData()
         })
+    }
+    
+    func refresh(sender:AnyObject) {
+        self.loadMatches()
     }
     
 }

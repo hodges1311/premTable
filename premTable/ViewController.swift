@@ -19,13 +19,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var navBar: UINavigationBar!
     
     
-     var standings = [team]()
-    
+    var standings = [team]()
+    var refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.barTintColor = UIColor.orangeColor()
         loadStandings()
+        
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.premTable?.addSubview(refreshControl)
         // Do any additional setup after loading the view, typically from a nib.
         }
 
@@ -42,12 +46,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         Alamofire.request(.GET, "https://api.football-data.org/v1/soccerseasons/426/leagueTable", parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
             .responseJSON{ response in
                 let json = JSON(response.result.value!)
+                
+                if self.refreshControl.refreshing
+                {
+                    self.refreshControl.endRefreshing()
+                }
+                
                 self.createStandings(json)
                 
         }
     }
     
     func createStandings(json : JSON){
+        standings.removeAll()
         
         for i in 0...json["standing"].count-1{
             var currentTeam : team
@@ -93,6 +104,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.premTable.reloadData()
         })
+    }
+    
+    func refresh(sender:AnyObject) {
+        self.loadStandings()
     }
     
     }
