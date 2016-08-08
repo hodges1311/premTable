@@ -47,9 +47,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func createStandings(json : JSON){
         
         for i in 0...json["standing"].count-1{
-            let currentTeam : team = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), crest : String(json["standing"][i]["crestURI"]))
+            var currentTeam : team
+            
+            if i < 3{
+            currentTeam = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.greenColor())
+            }
+            else if i == 3{
+            currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.blueColor())
+            }
+            else if i == 4{
+                currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.yellowColor())
+            }
+            else if i < 20 && i > 16{
+                currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.redColor())
+            }
+            else{
+                   currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.whiteColor())
+            }
+
+
             standings.append(currentTeam)
-            //print(standings[i].name)
+           
         }
         reloadTable()
     }
@@ -64,6 +82,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.position.text = standings[indexPath.row].rank
         cell.points.text = standings[indexPath.row].points
         cell.TeamCrest.image = UIImage(named: standings[indexPath.row].name + ".png")
+        cell.sideBar.backgroundColor = standings[indexPath.row].color
         return cell
     }
     

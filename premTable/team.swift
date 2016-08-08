@@ -14,13 +14,13 @@ class team{
     var rank : String
     var name : String
     var points : String
-    var imageURL : String
+    var color : UIColor
     
-    init(rank : String, name : String, points : String, crest : String){
+    init(rank : String, name : String, points : String, color : UIColor){
         self.rank = rank
         self.name = name
         self.points = points
-        self.imageURL = crest.stringByReplacingOccurrencesOfString("http://", withString: "https://", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        self.color = color
         
     }
     
