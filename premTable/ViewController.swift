@@ -16,12 +16,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
  
     @IBOutlet var tableStack: UIStackView!
     @IBOutlet var premTable: UITableView!
+    @IBOutlet weak var navBar: UINavigationBar!
+    
     
      var standings = [team]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navBar.barTintColor = UIColor.orangeColor()
         loadStandings()
         // Do any additional setup after loading the view, typically from a nib.
         }

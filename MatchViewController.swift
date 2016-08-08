@@ -15,14 +15,16 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet var matchStack: UIStackView!
     @IBOutlet var matchTable: UITableView!
+    @IBOutlet weak var navBar: UINavigationBar!
+    
     
     var currentMatchday = 1;
-    
     var matches = [match]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navBar.barTintColor = UIColor.orangeColor()
         loadMatches()
         // Do any additional setup after loading the view, typically from a nib.
     }

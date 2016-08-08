@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="60" id="xrT-Ig-g8I"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Matches" id="DzM-IN-rCH"/>
+                                    <navigationItem title="Premier League" id="DzM-IN-rCH"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xFk-o3-G3c" userLabel="MatchTable">
@@ -128,6 +128,7 @@
                     <connections>
                         <outlet property="matchStack" destination="h4M-zP-S5a" id="FBU-sv-DEK"/>
                         <outlet property="matchTable" destination="xFk-o3-G3c" id="H1M-4v-Xdf"/>
+                        <outlet property="navBar" destination="Ucp-LE-IEw" id="g52-Yh-lmU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Etr-hl-PYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -170,7 +171,7 @@
                                     <constraint firstAttribute="height" constant="60" id="upf-aS-nvn"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Premier League Standings" id="L8J-mR-QaO"/>
+                                    <navigationItem title="Premier League" id="L8J-mR-QaO"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Juo-qn-Yig">
@@ -209,9 +210,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="man-Bv-mfK" userLabel="qualification">
-                                                    <rect key="frame" x="0.0" y="-1" width="15" height="100"/>
+                                                    <rect key="frame" x="0.0" y="-1" width="7" height="100"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="15" id="W1S-Oj-ox3"/>
+                                                        <constraint firstAttribute="width" constant="7" id="W1S-Oj-ox3"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3e8-hW-qrM">
@@ -231,7 +232,7 @@
                                                 <constraint firstItem="kX1-Mk-9RV" firstAttribute="baseline" secondItem="3e8-hW-qrM" secondAttribute="baseline" id="Qym-U9-5DL"/>
                                                 <constraint firstItem="3e8-hW-qrM" firstAttribute="baseline" secondItem="NXb-WS-UZO" secondAttribute="baseline" id="ZHX-ZR-waa"/>
                                                 <constraint firstItem="man-Bv-mfK" firstAttribute="leading" secondItem="fi9-GQ-uLq" secondAttribute="leading" id="dRw-1O-R3r"/>
-                                                <constraint firstItem="kX1-Mk-9RV" firstAttribute="leading" secondItem="man-Bv-mfK" secondAttribute="trailing" constant="8" symbolic="YES" id="nGg-hP-0fl"/>
+                                                <constraint firstItem="kX1-Mk-9RV" firstAttribute="leading" secondItem="man-Bv-mfK" secondAttribute="trailing" constant="16" id="nGg-hP-0fl"/>
                                                 <constraint firstItem="Ea1-Rq-I9Q" firstAttribute="leading" secondItem="kX1-Mk-9RV" secondAttribute="trailing" constant="8" symbolic="YES" id="oDA-4R-Sl1"/>
                                                 <constraint firstItem="NXb-WS-UZO" firstAttribute="leading" secondItem="3e8-hW-qrM" secondAttribute="trailing" constant="8" symbolic="YES" id="riI-6z-pem"/>
                                                 <constraint firstItem="Ea1-Rq-I9Q" firstAttribute="top" secondItem="fi9-GQ-uLq" secondAttribute="topMargin" constant="17" id="w8F-vP-tah"/>
@@ -264,6 +265,7 @@
                     </stackView>
                     <tabBarItem key="tabBarItem" title="Standings" id="GQv-BU-qO4"/>
                     <connections>
+                        <outlet property="navBar" destination="T6Q-2B-Qma" id="b3i-Er-ysz"/>
                         <outlet property="premTable" destination="Juo-qn-Yig" id="uQD-ha-F5N"/>
                         <outlet property="tableStack" destination="ioE-sS-Zz7" id="3ld-rZ-NKI"/>
                     </connections>
