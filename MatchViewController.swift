@@ -16,7 +16,7 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet var matchStack: UIStackView!
     @IBOutlet var matchTable: UITableView!
     @IBOutlet weak var navBar: UINavigationBar!
-    
+  
     
     var currentMatchday = 1;
     var matches = [match]()
