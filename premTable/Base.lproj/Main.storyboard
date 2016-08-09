@@ -19,21 +19,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ucp-LE-IEw">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="xrT-Ig-g8I"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Premier League" id="DzM-IN-rCH"/>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xFk-o3-G3c" userLabel="MatchTable">
-                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="540"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MatchTableViewCell" rowHeight="100" id="8pw-qo-REb" customClass="MatchTableViewCell" customModule="premTable" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8pw-qo-REb" id="qdQ-by-oDp">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
@@ -115,7 +106,7 @@
                                 </connections>
                             </tableView>
                             <tabBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yBA-Zo-kTS">
-                                <rect key="frame" x="0.0" y="600" width="600" height="0.0"/>
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
                                     <tabBarItem systemItem="favorites" id="ghw-Fk-4aL"/>
@@ -124,18 +115,17 @@
                             </tabBar>
                         </subviews>
                     </stackView>
-                    <tabBarItem key="tabBarItem" title="Matches" image="MatchIcon.png" id="enz-od-nFy"/>
+                    <navigationItem key="navigationItem" title="Matches" id="oDe-f8-eVy"/>
                     <connections>
                         <outlet property="matchStack" destination="h4M-zP-S5a" id="FBU-sv-DEK"/>
                         <outlet property="matchTable" destination="xFk-o3-G3c" id="H1M-4v-Xdf"/>
-                        <outlet property="navBar" destination="Ucp-LE-IEw" id="g52-Yh-lmU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Etr-hl-PYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1971" y="90"/>
+            <point key="canvasLocation" x="-1159" y="90"/>
         </scene>
-        <!--Team Schedule Controller-->
+        <!--Team Schedule-->
         <scene sceneID="OVn-8S-Icm">
             <objects>
                 <viewController storyboardIdentifier="teamSchedule" id="6et-i5-ErZ" customClass="teamScheduleController" customModule="premTable" customModuleProvider="target" sceneMemberID="viewController">
@@ -147,22 +137,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7n-i8-3ym">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="QOR-Xv-7TJ"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Premier League" id="5cz-dw-4Dt"/>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XOW-Bx-eSS">
-                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MatchTableViewCell" rowHeight="100" id="86y-Xa-aQA" customClass="MatchTableViewCell" customModule="premTable" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="100"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="86y-Xa-aQA" id="PIX-aT-sLl">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
@@ -245,15 +225,15 @@
                             </tableView>
                         </subviews>
                     </stackView>
+                    <navigationItem key="navigationItem" title="Team Schedule" id="bLd-TU-4LT"/>
                     <connections>
                         <outlet property="matchTable" destination="XOW-Bx-eSS" id="yKR-0F-m0S"/>
-                        <outlet property="navBar" destination="s7n-i8-3ym" id="Ja6-oN-aEG"/>
                         <outlet property="teamStack" destination="DE5-qW-FMS" id="HqI-vh-VwZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r9A-2f-g5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1275" y="-563"/>
+            <point key="canvasLocation" x="-463" y="-563"/>
         </scene>
         <!--Custom Tab Bar-->
         <scene sceneID="uaB-vx-Phg">
@@ -266,8 +246,8 @@
                     </tabBar>
                     <connections>
                         <outlet property="tabBarColor" destination="OfY-Ks-1sa" id="1s6-F1-U6f"/>
-                        <segue destination="Q1i-Vh-I40" kind="relationship" relationship="viewControllers" id="ENW-lh-wOh"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="O30-aN-qQ6"/>
+                        <segue destination="RcI-ah-UQD" kind="relationship" relationship="viewControllers" id="ENW-lh-wOh"/>
+                        <segue destination="cQw-wQ-bpR" kind="relationship" relationship="viewControllers" id="O30-aN-qQ6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bey-Rp-QBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -277,7 +257,7 @@
         <!--Standings-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="StandingsController" id="BYZ-38-t0r" customClass="ViewController" customModule="premTable" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StandingsController" id="BYZ-38-t0r" userLabel="Standings" customClass="ViewController" customModule="premTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ud2-nK-UUZ"/>
                         <viewControllerLayoutGuide type="bottom" id="jCx-an-cnH"/>
@@ -286,21 +266,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6Q-2B-Qma">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="9aj-7F-sYf"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Premier League" id="L8J-mR-QaO"/>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Juo-qn-Yig">
-                                <rect key="frame" x="0.0" y="60" width="600" height="491"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TeamTableViewCell" rowHeight="70" id="zSd-Jx-SFr" customClass="TeamTableViewCell" customModule="premTable" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="70"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zSd-Jx-SFr" id="fi9-GQ-uLq">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
@@ -374,27 +345,56 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="2FG-yz-fhp"/>
                                 </connections>
                             </tableView>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ap0-Wv-PoM">
-                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="0aQ-gv-qQq"/>
-                                    <tabBarItem systemItem="more" id="3DT-X2-mJa"/>
-                                </items>
-                            </tabBar>
                         </subviews>
                     </stackView>
-                    <tabBarItem key="tabBarItem" title="Standings" image="tableICON.png" id="GQv-BU-qO4"/>
+                    <navigationItem key="navigationItem" title="Table" id="5lw-hg-aKB"/>
                     <connections>
-                        <outlet property="navBar" destination="T6Q-2B-Qma" id="b3i-Er-ysz"/>
                         <outlet property="premTable" destination="Juo-qn-Yig" id="uQD-ha-F5N"/>
                         <outlet property="tableStack" destination="ioE-sS-Zz7" id="3ld-rZ-NKI"/>
-                        <segue destination="6et-i5-ErZ" kind="show" identifier="segue" id="W7o-wq-eDM"/>
+                        <segue destination="6et-i5-ErZ" kind="show" identifier="segue" id="CFm-Rq-zWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1151" y="-563"/>
+        </scene>
+        <!--navController-->
+        <scene sceneID="yse-1W-apV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cQw-wQ-bpR" userLabel="navController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Standings" image="tableICON.png" id="GQv-BU-qO4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jPd-ti-vJI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rZh-3l-KJK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbX-qG-x6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="-1963" y="-563"/>
+        </scene>
+        <!--navController-->
+        <scene sceneID="3NU-fV-fnd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RcI-ah-UQD" userLabel="navController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Matches" image="MatchIcon.png" id="enz-od-nFy"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3ZM-BN-Ua5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q1i-Vh-I40" kind="relationship" relationship="rootViewController" id="kxd-cS-xna"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Neh-oQ-AiM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1971" y="90"/>
         </scene>
     </scenes>
     <resources>

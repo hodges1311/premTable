@@ -15,7 +15,7 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet var matchStack: UIStackView!
     @IBOutlet var matchTable: UITableView!
-    @IBOutlet weak var navBar: UINavigationBar!
+
   
     
     var currentMatchday = "8"
@@ -25,7 +25,7 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.barTintColor = UIColor.orangeColor()
+        
         getMatchday()
         
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")

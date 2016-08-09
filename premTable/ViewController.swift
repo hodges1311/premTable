@@ -16,17 +16,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
  
     @IBOutlet var tableStack: UIStackView!
     @IBOutlet var premTable: UITableView!
-    @IBOutlet weak var navBar: UINavigationBar!
+
     
     
     var standings = [team]()
     var refreshControl = UIRefreshControl()
-    var teamUrl :String = "Error"
+    var teamUrl : String = "Error"
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.barTintColor = UIColor.orangeColor()
         loadStandings()
         
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
@@ -105,23 +104,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    
-        
-    let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-    let destination = storyboard.instantiateViewControllerWithIdentifier("teamSchedule") as! teamScheduleController
-    navigationController?.pushViewController(destination, animated: true)
     teamUrl = standings[indexPath.row].url
-    performSegueWithIdentifier("segue", sender: self)
+    let teamSchedule = self.storyboard!.instantiateViewControllerWithIdentifier("teamSchedule") as! teamScheduleController
+    teamSchedule.teamUrl = self.teamUrl
+    self.navigationController!.pushViewController(teamSchedule, animated: true)
         
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if segue.identifier == "segue" {
-            let teamSchedule : teamScheduleController = segue.destinationViewController as! teamScheduleController
-            teamSchedule.teamUrl = self.teamUrl
-        }
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//        if segue.identifier == "segue" {
+//            let teamSchedule = segue.destinationViewController as! teamScheduleController
+//            teamSchedule.teamUrl = self.teamUrl
+//        }
+//    }
     
     func reloadTable() {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in

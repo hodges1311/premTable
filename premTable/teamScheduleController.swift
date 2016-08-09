@@ -14,21 +14,19 @@ import SwiftyJSON
 class teamScheduleController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet var teamStack: UIStackView!
-    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var matchTable: UITableView!
     
-    var teamUrl : String = ""
+    var teamUrl : String = "http://api.football-data.org/v1/teams/1044"
     var matches = [match]()
     var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.barTintColor = UIColor.orangeColor()
         loadMatches()
         
-        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-        self.matchTable?.addSubview(refreshControl)
+       // self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        //self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        //self.matchTable?.addSubview(refreshControl)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -110,6 +108,7 @@ class teamScheduleController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     func refresh(sender:AnyObject) {
+        teamUrl = teamUrl.stringByReplacingOccurrencesOfString("https", withString: "http")
         self.loadMatches()
     }
     
