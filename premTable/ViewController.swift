@@ -21,7 +21,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var standings = [team]()
     var refreshControl = UIRefreshControl()
-
+    var teamUrl :String = "Error"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.barTintColor = UIColor.orangeColor()
@@ -64,21 +66,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             var currentTeam : team
             
             if i < 3{
-            currentTeam = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.greenColor())
+            currentTeam = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.greenColor(), url : String(json["standing"][i]["_links"]["team"]["href"]))
             }
             else if i == 3{
-            currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.blueColor())
+                currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.blueColor(), url : String(json["standing"][i]["_links"]["team"]["href"]))
             }
             else if i == 4{
-                currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.yellowColor())
+                currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.yellowColor(), url : String(json["standing"][i]["_links"]["team"]["href"]))
             }
             else if i < 20 && i > 16{
-                currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.redColor())
+                currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.redColor(), url : String(json["standing"][i]["_links"]["team"]["href"]))
             }
             else{
-                   currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.whiteColor())
+                currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.whiteColor(), url : String(json["standing"][i]["_links"]["team"]["href"]))
             }
-
+            
 
             standings.append(currentTeam)
            
@@ -98,6 +100,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.TeamCrest.image = UIImage(named: standings[indexPath.row].name + ".png")
         cell.sideBar.backgroundColor = standings[indexPath.row].color
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    
+        
+    let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    let destination = storyboard.instantiateViewControllerWithIdentifier("teamSchedule") as! teamScheduleController
+    navigationController?.pushViewController(destination, animated: true)
+    teamUrl = standings[indexPath.row].url
+    performSegueWithIdentifier("segue", sender: self)
+        
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "segue" {
+            let teamSchedule : teamScheduleController = segue.destinationViewController as! teamScheduleController
+            teamSchedule.teamUrl = self.teamUrl
+        }
     }
     
     func reloadTable() {

@@ -15,12 +15,13 @@ class team{
     var name : String
     var points : String
     var color : UIColor
-    
-    init(rank : String, name : String, points : String, color : UIColor){
+    var url : String
+    init(rank : String, name : String, points : String, color : UIColor, url : String){
         self.rank = rank
         self.name = name
         self.points = points
         self.color = color
+        self.url = url
         
     }
     

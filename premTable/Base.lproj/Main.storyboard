@@ -135,6 +135,126 @@
             </objects>
             <point key="canvasLocation" x="-1971" y="90"/>
         </scene>
+        <!--Team Schedule Controller-->
+        <scene sceneID="OVn-8S-Icm">
+            <objects>
+                <viewController storyboardIdentifier="teamSchedule" id="6et-i5-ErZ" customClass="teamScheduleController" customModule="premTable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XEe-VA-vP7"/>
+                        <viewControllerLayoutGuide type="bottom" id="hfj-hT-Vhs"/>
+                    </layoutGuides>
+                    <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" id="DE5-qW-FMS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7n-i8-3ym">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="QOR-Xv-7TJ"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Premier League" id="5cz-dw-4Dt"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XOW-Bx-eSS">
+                                <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MatchTableViewCell" rowHeight="100" id="86y-Xa-aQA" customClass="MatchTableViewCell" customModule="premTable" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="86y-Xa-aQA" id="PIX-aT-sLl">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Peu-LM-pd7" userLabel="HomeCrest">
+                                                    <rect key="frame" x="8" y="30" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="kaX-dh-64u"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iok-gr-hXl" userLabel="AwayCrest">
+                                                    <rect key="frame" x="552" y="30" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="vsg-Td-P0M"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZX-Lb-glt" userLabel="Away Team">
+                                                    <rect key="frame" x="344" y="30" width="200" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbs-DF-yeS" userLabel="Score">
+                                                    <rect key="frame" x="279" y="39" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="gyI-eX-GzV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJX-1N-T4e" userLabel="Home Team">
+                                                    <rect key="frame" x="56" y="30" width="200" height="40"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Iok-gr-hXl" firstAttribute="trailing" secondItem="PIX-aT-sLl" secondAttribute="trailingMargin" id="6Da-cr-Dbl"/>
+                                                <constraint firstItem="Cbs-DF-yeS" firstAttribute="centerX" secondItem="PIX-aT-sLl" secondAttribute="centerX" id="7Mc-wq-tbk"/>
+                                                <constraint firstItem="Cbs-DF-yeS" firstAttribute="leading" secondItem="uJX-1N-T4e" secondAttribute="trailing" constant="23" id="N68-QN-8iS"/>
+                                                <constraint firstItem="Peu-LM-pd7" firstAttribute="top" secondItem="uJX-1N-T4e" secondAttribute="top" id="Q9S-13-A9F"/>
+                                                <constraint firstItem="Peu-LM-pd7" firstAttribute="centerY" secondItem="PIX-aT-sLl" secondAttribute="centerY" id="TLo-3L-ia6"/>
+                                                <constraint firstItem="uJX-1N-T4e" firstAttribute="centerY" secondItem="Cbs-DF-yeS" secondAttribute="centerY" id="XWN-5e-7JB"/>
+                                                <constraint firstItem="uJX-1N-T4e" firstAttribute="firstBaseline" secondItem="yZX-Lb-glt" secondAttribute="firstBaseline" id="Xc2-Dm-FaO"/>
+                                                <constraint firstItem="Peu-LM-pd7" firstAttribute="bottom" secondItem="uJX-1N-T4e" secondAttribute="bottom" id="aJO-qE-I4f"/>
+                                                <constraint firstItem="yZX-Lb-glt" firstAttribute="top" secondItem="Iok-gr-hXl" secondAttribute="top" id="dRV-7c-MJD"/>
+                                                <constraint firstItem="yZX-Lb-glt" firstAttribute="leading" secondItem="Cbs-DF-yeS" secondAttribute="trailing" constant="83" id="fwW-YH-Bos"/>
+                                                <constraint firstItem="Iok-gr-hXl" firstAttribute="leading" secondItem="yZX-Lb-glt" secondAttribute="trailing" constant="8" symbolic="YES" id="gQ8-Em-mvJ"/>
+                                                <constraint firstItem="yZX-Lb-glt" firstAttribute="leading" secondItem="Cbs-DF-yeS" secondAttribute="trailing" constant="23" id="gmx-ZV-4AJ"/>
+                                                <constraint firstItem="uJX-1N-T4e" firstAttribute="leading" secondItem="Peu-LM-pd7" secondAttribute="trailing" constant="8" symbolic="YES" id="h71-LH-iu1"/>
+                                                <constraint firstItem="Peu-LM-pd7" firstAttribute="top" secondItem="PIX-aT-sLl" secondAttribute="topMargin" constant="22" id="l7l-fy-Nf0"/>
+                                                <constraint firstItem="uJX-1N-T4e" firstAttribute="baseline" secondItem="yZX-Lb-glt" secondAttribute="baseline" id="mw1-a9-f0o"/>
+                                                <constraint firstItem="yZX-Lb-glt" firstAttribute="bottom" secondItem="Iok-gr-hXl" secondAttribute="bottom" id="ozs-MA-8Af"/>
+                                                <constraint firstItem="Peu-LM-pd7" firstAttribute="leading" secondItem="PIX-aT-sLl" secondAttribute="leadingMargin" id="qWH-8u-CI3"/>
+                                                <constraint firstItem="Cbs-DF-yeS" firstAttribute="leading" secondItem="uJX-1N-T4e" secondAttribute="trailing" constant="83" id="uWj-gU-e2D"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="uWj-gU-e2D"/>
+                                                    <exclude reference="fwW-YH-Bos"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="away" destination="yZX-Lb-glt" id="hPE-ls-zdC"/>
+                                            <outlet property="awayCrest" destination="Iok-gr-hXl" id="CWq-8S-q32"/>
+                                            <outlet property="home" destination="uJX-1N-T4e" id="BgL-Yw-DvM"/>
+                                            <outlet property="homeCrest" destination="Peu-LM-pd7" id="zGd-NB-9hx"/>
+                                            <outlet property="score" destination="Cbs-DF-yeS" id="rHn-nM-bgR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6et-i5-ErZ" id="Mdx-ef-M8t"/>
+                                    <outlet property="delegate" destination="6et-i5-ErZ" id="kjb-XF-ZE6"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                    </stackView>
+                    <connections>
+                        <outlet property="matchTable" destination="XOW-Bx-eSS" id="yKR-0F-m0S"/>
+                        <outlet property="navBar" destination="s7n-i8-3ym" id="Ja6-oN-aEG"/>
+                        <outlet property="teamStack" destination="DE5-qW-FMS" id="HqI-vh-VwZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r9A-2f-g5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1275" y="-563"/>
+        </scene>
         <!--Custom Tab Bar-->
         <scene sceneID="uaB-vx-Phg">
             <objects>
@@ -157,7 +277,7 @@
         <!--Standings-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="premTable" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StandingsController" id="BYZ-38-t0r" customClass="ViewController" customModule="premTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ud2-nK-UUZ"/>
                         <viewControllerLayoutGuide type="bottom" id="jCx-an-cnH"/>
@@ -179,7 +299,7 @@
                                 <rect key="frame" x="0.0" y="60" width="600" height="491"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TeamTableViewCell" rowHeight="70" id="zSd-Jx-SFr" customClass="TeamTableViewCell" customModule="premTable" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TeamTableViewCell" rowHeight="70" id="zSd-Jx-SFr" customClass="TeamTableViewCell" customModule="premTable" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zSd-Jx-SFr" id="fi9-GQ-uLq">
@@ -269,6 +389,7 @@
                         <outlet property="navBar" destination="T6Q-2B-Qma" id="b3i-Er-ysz"/>
                         <outlet property="premTable" destination="Juo-qn-Yig" id="uQD-ha-F5N"/>
                         <outlet property="tableStack" destination="ioE-sS-Zz7" id="3ld-rZ-NKI"/>
+                        <segue destination="6et-i5-ErZ" kind="show" identifier="segue" id="W7o-wq-eDM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
