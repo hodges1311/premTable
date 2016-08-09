@@ -11,6 +11,8 @@ Version 3: Added more style and pull to refresh on both views + Shows game time 
 
 Pull to refresh:
 
+<p align="center">
   <img src="https://github.com/hodges1311/premTable/blob/master/premTable/Assets.xcassets/Screenshots/Pull%20to%20Refresh.imageset/Simulator%20Screen%20Shot%20Aug%209%2C%202016%2C%2010.39.53%20AM.png" width="350"/>
-  
+</p>
+
 Updates to come!
