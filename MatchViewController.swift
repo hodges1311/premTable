@@ -18,7 +18,7 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var navBar: UINavigationBar!
   
     
-    var currentMatchday = 1;
+    var currentMatchday = "8"
     var matches = [match]()
     var refreshControl = UIRefreshControl()
     
@@ -26,7 +26,7 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.barTintColor = UIColor.orangeColor()
-        loadMatches()
+        getMatchday()
         
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
@@ -39,8 +39,20 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    func loadMatches() {
-        Alamofire.request(.GET, "https://api.football-data.org/v1/competitions/426/fixtures?matchday=1", parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
+    func getMatchday(){
+         Alamofire.request(.GET, "https://api.football-data.org/v1/competitions/426/", parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
+            .responseJSON{ response in
+                let json = JSON(response.result.value!)
+                self.currentMatchday = json["currentMatchday"].description
+                self.loadMatches(self.currentMatchday)
+        }
+        
+    }
+    
+    
+    func loadMatches(matchday : String) {
+        print(matchday)
+        Alamofire.request(.GET, "https://api.football-data.org/v1/competitions/426/fixtures?matchday=" + matchday, parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
             .responseJSON{ response in
                 let json = JSON(response.result.value!)
                 
@@ -108,7 +120,7 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func refresh(sender:AnyObject) {
-        self.loadMatches()
+        self.loadMatches(currentMatchday)
     }
     
 }
