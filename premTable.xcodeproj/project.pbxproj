@@ -44,8 +44,6 @@
 		4708C883F073AEDE41A28343 /* Pods_premTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4607D8FCBDE868A78CC643D7 /* Pods_premTable.framework */; };
 		B1061DF91D5B6B69005F1B0A /* singleMatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1061DF81D5B6B69005F1B0A /* singleMatchController.swift */; };
 		B1061DFB1D5BBAD0005F1B0A /* matchdayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1061DFA1D5BBAD0005F1B0A /* matchdayController.swift */; };
-		B1D3C8FF1D5A1944006E83B9 /* MatchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D3C8FD1D5A1944006E83B9 /* MatchIcon.png */; };
-		B1D3C9001D5A1944006E83B9 /* tableICON.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D3C8FE1D5A1944006E83B9 /* tableICON.png */; };
 		B1D3C9021D5A2FFD006E83B9 /* teamScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3C9011D5A2FFD006E83B9 /* teamScheduleController.swift */; };
 		B1E574F11D590ECD00B3BDB8 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E574F01D590ECD00B3BDB8 /* CustomTabBar.swift */; };
 		C3364DEE038BE822A76F983C /* Pods_premTableUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 600FB206BD77DEA0450F4F72 /* Pods_premTableUITests.framework */; };
@@ -118,8 +116,6 @@
 		AFA578CAAC1B1CE3409BFB53 /* Pods-premTableTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-premTableTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-premTableTests/Pods-premTableTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1061DF81D5B6B69005F1B0A /* singleMatchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singleMatchController.swift; sourceTree = "<group>"; };
 		B1061DFA1D5BBAD0005F1B0A /* matchdayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = matchdayController.swift; sourceTree = "<group>"; };
-		B1D3C8FD1D5A1944006E83B9 /* MatchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MatchIcon.png; path = ../../../Downloads/MatchIcon.png; sourceTree = "<group>"; };
-		B1D3C8FE1D5A1944006E83B9 /* tableICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tableICON.png; path = ../../../Downloads/tableICON.png; sourceTree = "<group>"; };
 		B1D3C9011D5A2FFD006E83B9 /* teamScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = teamScheduleController.swift; sourceTree = "<group>"; };
 		B1E574F01D590ECD00B3BDB8 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		DE7458801A88A1728C2BE9AB /* Pods-premTableUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-premTableUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-premTableUITests/Pods-premTableUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,8 +209,6 @@
 		33B1E0BA1D57CCDB00005A24 /* logos */ = {
 			isa = PBXGroup;
 			children = (
-				B1D3C8FD1D5A1944006E83B9 /* MatchIcon.png */,
-				B1D3C8FE1D5A1944006E83B9 /* tableICON.png */,
 				33B1E0BB1D57D36000005A24 /* premTableLaunch.png */,
 				33B1E0921D57CCCE00005A24 /* AFC Bournemouth.png */,
 				33B1E0931D57CCCE00005A24 /* Arsenal FC.png */,
@@ -414,14 +408,12 @@
 				33B1E0BC1D57D36000005A24 /* premTableLaunch.png in Resources */,
 				33B1E0B11D57CCCE00005A24 /* Middlesbrough FC.png in Resources */,
 				334D63081D5572C2004F511F /* Assets.xcassets in Resources */,
-				B1D3C9001D5A1944006E83B9 /* tableICON.png in Resources */,
 				33B1E0A81D57CCCE00005A24 /* Burnley FC.png in Resources */,
 				33B1E0B51D57CCCE00005A24 /* Swansea City FC.png in Resources */,
 				33B1E0AE1D57CCCE00005A24 /* Liverpool FC.png in Resources */,
 				33B1E0B41D57CCCE00005A24 /* Sunderland AFC.png in Resources */,
 				33B1E0B91D57CCCE00005A24 /* West Ham United FC.png in Resources */,
 				33B1E0AC1D57CCCE00005A24 /* Hull City FC.png in Resources */,
-				B1D3C8FF1D5A1944006E83B9 /* MatchIcon.png in Resources */,
 				334D63061D5572C2004F511F /* Main.storyboard in Resources */,
 				33B1E0A91D57CCCE00005A24 /* Chelsea FC.png in Resources */,
 			);

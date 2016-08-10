@@ -587,7 +587,7 @@
         <scene sceneID="yse-1W-apV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cQw-wQ-bpR" userLabel="navController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Standings" image="tableICON.png" id="GQv-BU-qO4"/>
+                    <tabBarItem key="tabBarItem" title="Standings" image="tableICON" id="GQv-BU-qO4"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jPd-ti-vJI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -606,7 +606,7 @@
         <scene sceneID="3NU-fV-fnd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RcI-ah-UQD" userLabel="navController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Matches" image="MatchIcon.png" id="enz-od-nFy"/>
+                    <tabBarItem key="tabBarItem" title="Matches" image="MatchIcon" id="enz-od-nFy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3ZM-BN-Ua5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -623,7 +623,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MatchIcon.png" width="32" height="32"/>
-        <image name="tableICON.png" width="32" height="32"/>
+        <image name="MatchIcon" width="32" height="32"/>
+        <image name="tableICON" width="32" height="32"/>
     </resources>
 </document>
