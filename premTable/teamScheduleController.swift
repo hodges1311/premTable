@@ -55,7 +55,7 @@ class teamScheduleController: UIViewController, UITableViewDataSource, UITableVi
     func createMatches(json :JSON) {
         matches.removeAll()
         for i in 0...json.count-1{
-            let currentMatch :match = match(home : String(json[i]["homeTeamName"]), away : String(json[i]["awayTeamName"]), homeGoals : String(json[i]["result"]["homeTeamGoals"]), awayGoals :  String(json[i]["result"]["awayTeamGoals"]), status : String(json[i]["status"]), time : String(json[i]["date"]))
+            let currentMatch :match = match(home : String(json[i]["homeTeamName"]), away : String(json[i]["awayTeamName"]), homeGoals : String(json[i]["result"]["goalsHometeam"]), awayGoals :  String(json[i]["result"]["goalsAwayTeam"]), status : String(json[i]["status"]), time : String(json[i]["date"]), matchUrl : String(json[i]["_links"]["self"]["href"]))
             matches.append(currentMatch)
         }
         reloadTable()

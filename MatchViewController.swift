@@ -29,7 +29,7 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
         getMatchday()
         
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl.addTarget(self, action: #selector(ViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.matchTable?.addSubview(refreshControl)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -51,7 +51,6 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func loadMatches(matchday : String) {
-        print(matchday)
         Alamofire.request(.GET, "https://api.football-data.org/v1/competitions/426/fixtures?matchday=" + matchday, parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
             .responseJSON{ response in
                 let json = JSON(response.result.value!)
@@ -69,7 +68,7 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
     func createMatches(json :JSON) {
         matches.removeAll()
         for i in 0...json.count-1{
-            let currentMatch :match = match(home : String(json[i]["homeTeamName"]), away : String(json[i]["awayTeamName"]), homeGoals : String(json[i]["result"]["homeTeamGoals"]), awayGoals :  String(json[i]["result"]["awayTeamGoals"]), status : String(json[i]["status"]), time : String(json[i]["date"]))
+            let currentMatch :match = match(home : String(json[i]["homeTeamName"]), away : String(json[i]["awayTeamName"]), homeGoals : String(json[i]["result"]["goalsHomeTeam"]), awayGoals :  String(json[i]["result"]["goalsAwayTeam"]), status : String(json[i]["status"]), time : String(json[i]["date"]), matchUrl : String(json[i]["_links"]["self"]["href"]))
             matches.append(currentMatch)
         }
         reloadTable()
@@ -85,13 +84,22 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.away.text = matches[indexPath.row].away
         cell.homeCrest.image = UIImage(named: matches[indexPath.row].home + ".png")
         cell.awayCrest.image = UIImage(named: matches[indexPath.row].away + ".png")
-        if String(matches[indexPath.row].status) == "TIMED" {
+        if String(matches[indexPath.row].status) == "TIMED" || String(matches[indexPath.row].status) == "SCHEDULED" {
             cell.score.text = getDayTime(getGameTime(matches[indexPath.row].time)!)
         }
         else {
             cell.score.text = String(matches[indexPath.row].homeGoals) + "-" + String(matches[indexPath.row].awayGoals)
         }
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let singleMatch = self.storyboard!.instantiateViewControllerWithIdentifier("singleMatch") as! singleMatchController
+        singleMatch.currentMatch = matches[indexPath.row]
+        self.navigationController!.pushViewController(singleMatch, animated: true)
+        
     }
     
     func getGameTime(date : String) -> NSDate?{

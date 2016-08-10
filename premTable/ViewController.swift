@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         loadStandings()
         
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl.addTarget(self, action: #selector(ViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.premTable?.addSubview(refreshControl)
         // Do any additional setup after loading the view, typically from a nib.
         }
