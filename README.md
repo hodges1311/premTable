@@ -8,7 +8,7 @@ Update 4: Made UI better. Added Full team schedules when a team is selected from
 
 <p align="center">
   <img src="https://github.com/hodges1311/premTable/blob/master/premTable/Assets.xcassets/Screenshots/MatchesView.imageset/MatchesView.png" width="350"/>
- <img src="https://github.com/hodges1311/premTable/blob/master/premTable/Assets.xcassets/Screenshots/Table%20View.imageset/Table%20VIew.png" width="350"/>
+ <img src="https://github.com/hodges1311/premTable/blob/master/premTable/Assets.xcassets/Screenshots/Table%20View.imageset/Table%20View.png" width="350"/>
 </p>
 
 <p align="center">
