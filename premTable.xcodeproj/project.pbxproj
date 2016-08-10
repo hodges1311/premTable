@@ -43,6 +43,7 @@
 		3CD84EA8F77D75B519591EC0 /* Pods_premTableTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCC912D03D448EFC87E4F7E /* Pods_premTableTests.framework */; };
 		4708C883F073AEDE41A28343 /* Pods_premTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4607D8FCBDE868A78CC643D7 /* Pods_premTable.framework */; };
 		B1061DF91D5B6B69005F1B0A /* singleMatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1061DF81D5B6B69005F1B0A /* singleMatchController.swift */; };
+		B1061DFB1D5BBAD0005F1B0A /* matchdayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1061DFA1D5BBAD0005F1B0A /* matchdayController.swift */; };
 		B1D3C8FF1D5A1944006E83B9 /* MatchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D3C8FD1D5A1944006E83B9 /* MatchIcon.png */; };
 		B1D3C9001D5A1944006E83B9 /* tableICON.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D3C8FE1D5A1944006E83B9 /* tableICON.png */; };
 		B1D3C9021D5A2FFD006E83B9 /* teamScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3C9011D5A2FFD006E83B9 /* teamScheduleController.swift */; };
@@ -116,6 +117,7 @@
 		89B609327D0FF8D20122DEE2 /* Pods-premTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-premTable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-premTable/Pods-premTable.debug.xcconfig"; sourceTree = "<group>"; };
 		AFA578CAAC1B1CE3409BFB53 /* Pods-premTableTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-premTableTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-premTableTests/Pods-premTableTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1061DF81D5B6B69005F1B0A /* singleMatchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singleMatchController.swift; sourceTree = "<group>"; };
+		B1061DFA1D5BBAD0005F1B0A /* matchdayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = matchdayController.swift; sourceTree = "<group>"; };
 		B1D3C8FD1D5A1944006E83B9 /* MatchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MatchIcon.png; path = ../../../Downloads/MatchIcon.png; sourceTree = "<group>"; };
 		B1D3C8FE1D5A1944006E83B9 /* tableICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tableICON.png; path = ../../../Downloads/tableICON.png; sourceTree = "<group>"; };
 		B1D3C9011D5A2FFD006E83B9 /* teamScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = teamScheduleController.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				33C89C7C1D578BC800A8BB45 /* MatchViewController.swift */,
+				B1061DFA1D5BBAD0005F1B0A /* matchdayController.swift */,
 				334D63021D5572C2004F511F /* ViewController.swift */,
 				B1E574F01D590ECD00B3BDB8 /* CustomTabBar.swift */,
 				B1D3C9011D5A2FFD006E83B9 /* teamScheduleController.swift */,
@@ -572,6 +575,7 @@
 				33C89C7D1D578BC800A8BB45 /* MatchViewController.swift in Sources */,
 				33C89C7A1D5788F800A8BB45 /* match.swift in Sources */,
 				33DD58151D5665A3007B072D /* TeamTableViewCell.swift in Sources */,
+				B1061DFB1D5BBAD0005F1B0A /* matchdayController.swift in Sources */,
 				B1E574F11D590ECD00B3BDB8 /* CustomTabBar.swift in Sources */,
 				334D63031D5572C2004F511F /* ViewController.swift in Sources */,
 				334D63011D5572C2004F511F /* AppDelegate.swift in Sources */,

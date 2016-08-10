@@ -15,19 +15,22 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet var matchStack: UIStackView!
     @IBOutlet var matchTable: UITableView!
+    @IBOutlet weak var changeMatchday: UIButton!
+    @IBOutlet weak var MatchdayTitle: UINavigationItem!
 
   
     
     var currentMatchday = "8"
     var matches = [match]()
     var refreshControl = UIRefreshControl()
-    
+    var matchdaySet = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getMatchday()
-        
+        getMatchday(matchdaySet)
+        if matchdaySet {
+            MatchdayTitle.title = "Matchday " + currentMatchday
+        }
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: #selector(ViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.matchTable?.addSubview(refreshControl)
@@ -39,13 +42,19 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    func getMatchday(){
+    func getMatchday(set : Bool){
+        if !set{
          Alamofire.request(.GET, "https://api.football-data.org/v1/competitions/426/", parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
             .responseJSON{ response in
                 let json = JSON(response.result.value!)
                 self.currentMatchday = json["currentMatchday"].description
+                self.MatchdayTitle.title = "Matchday " + self.currentMatchday
                 self.loadMatches(self.currentMatchday)
         }
+        }
+            else{
+                self.loadMatches(self.currentMatchday)
+            }
         
     }
     
@@ -101,6 +110,20 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.navigationController!.pushViewController(singleMatch, animated: true)
         
     }
+    
+    @IBAction func changeMatchday(sender: AnyObject) {
+        let singleMatch = self.storyboard!.instantiateViewControllerWithIdentifier("pickMatchday") as! UITableViewController
+         self.navigationController!.pushViewController(singleMatch, animated: true)
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     func getGameTime(date : String) -> NSDate?{
         let dateString = date
