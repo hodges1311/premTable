@@ -38,7 +38,7 @@ class teamScheduleController: UIViewController, UITableViewDataSource, UITableVi
  
     func loadMatches() {
         teamUrl = teamUrl.stringByReplacingOccurrencesOfString("http", withString: "https")
-        Alamofire.request(.GET, teamUrl + "/fixtures", parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
+        Alamofire.request(.GET, teamUrl + "/fixtures", parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : apiKey.key])
             .responseJSON{ response in
                 let json = JSON(response.result.value!)
                 

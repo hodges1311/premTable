@@ -44,6 +44,7 @@
 		4708C883F073AEDE41A28343 /* Pods_premTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4607D8FCBDE868A78CC643D7 /* Pods_premTable.framework */; };
 		B1061DF91D5B6B69005F1B0A /* singleMatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1061DF81D5B6B69005F1B0A /* singleMatchController.swift */; };
 		B1061DFB1D5BBAD0005F1B0A /* matchdayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1061DFA1D5BBAD0005F1B0A /* matchdayController.swift */; };
+		B1613DE21D5CBB7100F8C34C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1613DE11D5CBB7100F8C34C /* Constants.swift */; };
 		B1D3C9021D5A2FFD006E83B9 /* teamScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3C9011D5A2FFD006E83B9 /* teamScheduleController.swift */; };
 		B1E574F11D590ECD00B3BDB8 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E574F01D590ECD00B3BDB8 /* CustomTabBar.swift */; };
 		C3364DEE038BE822A76F983C /* Pods_premTableUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 600FB206BD77DEA0450F4F72 /* Pods_premTableUITests.framework */; };
@@ -116,6 +117,7 @@
 		AFA578CAAC1B1CE3409BFB53 /* Pods-premTableTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-premTableTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-premTableTests/Pods-premTableTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1061DF81D5B6B69005F1B0A /* singleMatchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singleMatchController.swift; sourceTree = "<group>"; };
 		B1061DFA1D5BBAD0005F1B0A /* matchdayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = matchdayController.swift; sourceTree = "<group>"; };
+		B1613DE11D5CBB7100F8C34C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B1D3C9011D5A2FFD006E83B9 /* teamScheduleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = teamScheduleController.swift; sourceTree = "<group>"; };
 		B1E574F01D590ECD00B3BDB8 /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		DE7458801A88A1728C2BE9AB /* Pods-premTableUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-premTableUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-premTableUITests/Pods-premTableUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				33C89C7C1D578BC800A8BB45 /* MatchViewController.swift */,
 				B1061DFA1D5BBAD0005F1B0A /* matchdayController.swift */,
 				334D63021D5572C2004F511F /* ViewController.swift */,
+				B1613DE11D5CBB7100F8C34C /* Constants.swift */,
 				B1E574F01D590ECD00B3BDB8 /* CustomTabBar.swift */,
 				B1D3C9011D5A2FFD006E83B9 /* teamScheduleController.swift */,
 				B1061DF81D5B6B69005F1B0A /* singleMatchController.swift */,
@@ -574,6 +577,7 @@
 				B1061DF91D5B6B69005F1B0A /* singleMatchController.swift in Sources */,
 				33DD58131D564FF0007B072D /* team.swift in Sources */,
 				B1D3C9021D5A2FFD006E83B9 /* teamScheduleController.swift in Sources */,
+				B1613DE21D5CBB7100F8C34C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

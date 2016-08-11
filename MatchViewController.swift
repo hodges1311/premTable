@@ -44,7 +44,7 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func getMatchday(set : Bool){
         if !set{
-         Alamofire.request(.GET, "https://api.football-data.org/v1/competitions/426/", parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
+         Alamofire.request(.GET, "https://api.football-data.org/v1/competitions/426/", parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : apiKey.key])
             .responseJSON{ response in
                 let json = JSON(response.result.value!)
                 self.currentMatchday = json["currentMatchday"].description
@@ -60,7 +60,7 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func loadMatches(matchday : String) {
-        Alamofire.request(.GET, "https://api.football-data.org/v1/competitions/426/fixtures?matchday=" + matchday, parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
+        Alamofire.request(.GET, "https://api.football-data.org/v1/competitions/426/fixtures?matchday=" + matchday, parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : apiKey.key])
             .responseJSON{ response in
                 let json = JSON(response.result.value!)
                 

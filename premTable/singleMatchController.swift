@@ -49,7 +49,7 @@ class singleMatchController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     func loadMatches(fixtures: String) {
-        Alamofire.request(.GET, fixtures, parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : "a0a6c9a4443e46f680b1fe4c3f5f0bb6"])
+        Alamofire.request(.GET, fixtures, parameters: nil, encoding: .JSON, headers: ["X-Auth-Token" : apiKey.key])
             .responseJSON{ response in
                 let json = JSON(response.result.value!)
                 
