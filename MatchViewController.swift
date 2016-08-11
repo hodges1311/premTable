@@ -117,14 +117,6 @@ class MatchViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
     func getGameTime(date : String) -> NSDate?{
         let dateString = date
         var gameTime : NSDate?

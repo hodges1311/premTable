@@ -63,21 +63,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         for i in 0...json["standing"].count-1{
             var currentTeam : team
-            
+            let rank = String(json["standing"][i]["position"])
+            let name = String(json["standing"][i]["teamName"])
+            let points = String(json["standing"][i]["points"])
+            let url = String(json["standing"][i]["_links"]["team"]["href"])
             if i < 3{
-            currentTeam = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.greenColor(), url : String(json["standing"][i]["_links"]["team"]["href"]))
+            currentTeam = team(rank: rank, name: name, points: points, color : UIColor.greenColor(), url : url)
             }
             else if i == 3{
-                currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.blueColor(), url : String(json["standing"][i]["_links"]["team"]["href"]))
+                currentTeam  = team(rank: rank, name: name, points: points, color : UIColor.blueColor(), url : url)
             }
             else if i == 4{
-                currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.yellowColor(), url : String(json["standing"][i]["_links"]["team"]["href"]))
+                currentTeam  = team(rank: rank, name: name, points: points, color : UIColor.yellowColor(), url : url)
             }
             else if i < 20 && i > 16{
-                currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.redColor(), url : String(json["standing"][i]["_links"]["team"]["href"]))
+                currentTeam  = team(rank: rank, name: name, points: points, color : UIColor.redColor(), url : url)
             }
             else{
-                currentTeam  = team(rank: String(json["standing"][i]["position"]), name: String(json["standing"][i]["teamName"]), points: String(json["standing"][i]["points"]), color : UIColor.whiteColor(), url : String(json["standing"][i]["_links"]["team"]["href"]))
+                currentTeam  = team(rank: rank, name: name, points: points, color : UIColor.whiteColor(), url : url)
             }
             
 
