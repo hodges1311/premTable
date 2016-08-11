@@ -96,11 +96,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TeamTableViewCell", forIndexPath: indexPath) as! TeamTableViewCell
-        cell.teamName?.text = standings[indexPath.row].name
-        cell.position.text = standings[indexPath.row].rank
-        cell.points.text = standings[indexPath.row].points
-        cell.TeamCrest.image = UIImage(named: standings[indexPath.row].name + ".png")
-        cell.sideBar.backgroundColor = standings[indexPath.row].color
+        let row = indexPath.row
+        cell.teamName?.text = standings[row].name
+        cell.position.text = standings[row].rank
+        cell.points.text = standings[row].points
+        cell.TeamCrest.image = UIImage(named: standings[row].name + ".png")
+        cell.sideBar.backgroundColor = standings[row].color
         return cell
     }
     

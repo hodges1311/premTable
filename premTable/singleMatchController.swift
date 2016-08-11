@@ -40,11 +40,12 @@ class singleMatchController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MatchTableViewCell", forIndexPath: indexPath) as! MatchTableViewCell
-        cell.home.text = matches[indexPath.row].home
-        cell.away.text = matches[indexPath.row].away
-        cell.homeCrest.image = UIImage(named: matches[indexPath.row].home + ".png")
-        cell.awayCrest.image = UIImage(named: matches[indexPath.row].away + ".png")
-        cell.score.text = String(matches[indexPath.row].homeGoals) + "-" + String(matches[indexPath.row].awayGoals)
+        let row = indexPath.row
+        cell.home.text = matches[row].home
+        cell.away.text = matches[row].away
+        cell.homeCrest.image = UIImage(named: matches[row].home + ".png")
+        cell.awayCrest.image = UIImage(named: matches[row].away + ".png")
+        cell.score.text = String(matches[row].homeGoals) + "-" + String(matches[row].awayGoals)
         return cell
     }
 
